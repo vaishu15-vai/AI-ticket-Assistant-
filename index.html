@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SupportIQ — AI ticket assistant</title>
+    <meta name="description" content="AI-powered support operations dashboard" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand"><span class="brand-mark">✦</span><span>support<span class="brand-accent">IQ</span></span></div>
+        <div class="workspace-switcher"><span class="workspace-icon">S</span><span><b>Support team</b><small>Acme workspace</small></span><span class="chevron">⌄</span></div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <p class="nav-label">Workspace</p>
+          <button class="nav-item active" data-view="overview"><span>▦</span> Overview</button>
+          <button class="nav-item" data-view="tickets"><span>▤</span> All tickets <em>24</em></button>
+          <button class="nav-item" data-view="analytics"><span>◒</span> Analytics</button>
+          <p class="nav-label nav-label-spaced">Manage</p>
+          <button class="nav-item" data-view="knowledge"><span>▧</span> Knowledge base</button>
+          <button class="nav-item" data-view="settings"><span>⚙</span> Settings</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="ai-status"><span class="pulse"></span><span><b>AI systems online</b><small>All services operational</small></span></div>
+          <div class="user-profile"><div class="avatar avatar-indigo">VS</div><span><b>Vaishnavi S.</b><small>Administrator</small></span><span class="more">•••</span></div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" aria-label="Open menu">☰</button>
+          <div class="breadcrumb"><span>Workspace</span><b>/</b><strong>Overview</strong></div>
+          <div class="top-actions">
+            <button class="icon-btn" aria-label="Search">⌕</button><button class="icon-btn notification" aria-label="Notifications">♧<i></i></button>
+            <div class="top-avatar avatar avatar-indigo">VS</div>
+          </div>
+        </header>
+
+        <section class="content-wrap">
+          <div class="page-heading">
+            <div><p class="eyebrow">THURSDAY, OCTOBER 15, 2026</p><h1>Good morning, Vaishnavi <span>✦</span></h1><p class="muted">Here’s what’s happening with your support queue today.</p></div>
+            <button class="primary-btn" id="new-ticket-btn"><span>＋</span> New ticket</button>
+          </div>
+
+          <div class="stat-grid">
+            <article class="stat-card"><div class="stat-top"><span>Open tickets</span><span class="stat-icon purple">▤</span></div><strong id="open-count">24</strong><div class="stat-foot"><span class="trend up">↗ 12.5%</span><span>vs. last week</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Avg. response time</span><span class="stat-icon blue">◷</span></div><strong>1h 42m</strong><div class="stat-foot"><span class="trend up">↘ 8.2%</span><span>vs. last week</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Resolution rate</span><span class="stat-icon green">✓</span></div><strong>86.4%</strong><div class="stat-foot"><span class="trend up">↗ 4.8%</span><span>vs. last week</span></div></article>
+            <article class="stat-card"><div class="stat-top"><span>Customer sentiment</span><span class="stat-icon amber">♥</span></div><strong>7.8<span class="out-of">/10</span></strong><div class="stat-foot"><span class="trend up">↗ 0.6</span><span>vs. last week</span></div></article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel activity-panel">
+              <div class="panel-heading"><div><h2>Ticket activity</h2><p class="muted">Volume and sentiment over the last 7 days</p></div><select id="activity-range" aria-label="Activity range"><option>Last 7 days</option><option>Last 30 days</option></select></div>
+              <div class="chart-legend"><span><i class="legend-dot purple-dot"></i>Tickets</span><span><i class="legend-line"></i>Sentiment</span></div>
+              <div class="activity-chart"><div class="y-axis"><span>60</span><span>40</span><span>20</span><span>0</span></div><div class="chart-area"><div class="grid-lines"><i></i><i></i><i></i><i></i></div><div class="bars"><b style="height:42%"></b><b style="height:58%"></b><b style="height:47%"></b><b style="height:70%"></b><b style="height:62%"></b><b style="height:88%"></b><b class="today" style="height:74%"></b></div><svg class="sentiment-line" viewBox="0 0 700 150" preserveAspectRatio="none"><polyline points="0,105 116,85 233,97 350,57 466,72 583,31 700,46" fill="none" stroke="#f59e0b" stroke-width="3"/><circle cx="700" cy="46" r="5" fill="#fff" stroke="#f59e0b" stroke-width="3"/></svg><div class="x-axis"><span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Today</span></div></div></div>
+            </section>
+            <section class="panel category-panel"><div class="panel-heading"><div><h2>Tickets by category</h2><p class="muted">Current open queue</p></div><button class="more-btn">•••</button></div><div class="donut-wrap"><div class="donut"><div><strong>24</strong><small>tickets</small></div></div><div class="category-legend"><span><i class="cat-dot billing"></i>Billing <b>8</b></span><span><i class="cat-dot technical"></i>Technical <b>7</b></span><span><i class="cat-dot account"></i>Account <b>5</b></span><span><i class="cat-dot other"></i>Other <b>4</b></span></div></div></section>
+          </div>
+
+          <section class="panel tickets-panel" id="tickets-section">
+            <div class="panel-heading tickets-heading"><div><h2>Recent tickets</h2><p class="muted">AI-prioritized support queue</p></div><div class="ticket-actions"><div class="search-field"><span>⌕</span><input id="ticket-search" placeholder="Search tickets..." /></div><button class="filter-btn" id="filter-toggle">☷ Filters <i id="filter-count"></i></button></div></div>
+            <div class="filters" id="filters"><label>Status<select id="status-filter"><option value="all">All statuses</option><option value="Open">Open</option><option value="In progress">In progress</option><option value="Resolved">Resolved</option></select></label><label>Priority<select id="priority-filter"><option value="all">All priorities</option><option value="Urgent">Urgent</option><option value="High">High</option><option value="Medium">Medium</option><option value="Low">Low</option></select></label><label>Sentiment<select id="sentiment-filter"><option value="all">All sentiment</option><option value="Negative">Negative</option><option value="Neutral">Neutral</option><option value="Positive">Positive</option></select></label><button id="clear-filters">Clear all</button></div>
+            <div class="table-scroll"><table><thead><tr><th>Ticket</th><th>Category</th><th>Priority</th><th>Sentiment</th><th>Status</th><th>Updated</th><th></th></tr></thead><tbody id="ticket-body"></tbody></table></div>
+            <div class="table-footer"><span id="ticket-summary">Showing 5 of 24 tickets</span><div><button class="page-btn" disabled>‹</button><button class="page-btn selected">1</button><button class="page-btn">2</button><button class="page-btn">3</button><button class="page-btn">›</button></div></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="ticket-modal" aria-hidden="true"><div class="modal"><div class="modal-header"><div><p class="eyebrow">AI-ASSISTED INTAKE</p><h2>Submit a new ticket</h2><p class="muted">Describe the issue in plain language. SupportIQ will handle the rest.</p></div><button class="close-btn" id="close-modal">×</button></div><form id="ticket-form"><label>Your email<input type="email" id="email" placeholder="you@company.com" required /></label><label>What can we help with?<textarea id="ticket-text" rows="5" placeholder="e.g. I was charged twice for my subscription this month..." required></textarea></label><div class="attachment">＋ <span>Attach a file</span><small>Optional · PDF, PNG or JPG up to 10MB</small></div><button class="primary-btn submit-btn" type="submit"><span>✦</span> Analyze & submit ticket</button></form><div class="processing" id="processing"><div class="loader">✦</div><h3>Analyzing your ticket<span class="loading-dots">...</span></h3><p>Classifying, checking sentiment and drafting a reply</p></div><div class="success-result" id="success-result"><div class="success-icon">✓</div><h3>Ticket submitted</h3><p id="success-copy"></p><div class="ai-result-grid"><div><small>Category</small><b id="result-category"></b></div><div><small>Priority</small><b id="result-priority"></b></div><div><small>Sentiment</small><b id="result-sentiment"></b></div></div><label class="reply-label">Suggested reply <textarea id="suggested-reply" rows="4"></textarea></label><button class="primary-btn" id="done-btn">Done</button></div></div></div>
+    <div class="toast" id="toast"><span>✓</span><div><b>Ticket updated</b><small>Your changes have been saved.</small></div></div>
+    <script type="module" src="config.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
